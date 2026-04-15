@@ -1,0 +1,96 @@
+Install dependencies
+
+npm install
+
+Start MongoDB (make sure MongoDB is running on localhost:27017)
+
+Run the application:
+
+npm run dev  # Development with nodemon
+# or
+npm start    # Production
+
+API Endpoints & Examples
+
+
+
+Method
+
+Endpoint
+
+Description
+
+Example
+
+GET
+
+/api/v1/tasks
+
+Get all tasks
+
+GET /api/v1/tasks?status=completed&priority=high
+
+GET
+
+/api/v1/tasks/:id
+
+Get single task
+
+GET /api/v1/tasks/64f...abc
+
+POST
+
+/api/v1/tasks
+
+Create task
+
+POST /api/v1/tasks
+
+PATCH
+
+/api/v1/tasks/:id
+
+Partial update
+
+PATCH /api/v1/tasks/64f...abc
+
+PUT
+
+/api/v1/tasks/:id
+
+Full update
+
+PUT /api/v1/tasks/64f...abc
+
+DELETE
+
+/api/v1/tasks/:id
+
+Delete task
+
+DELETE /api/v1/tasks/64f...abc
+
+📝 Example Requests
+Create Task:
+
+bash
+
+Copy code
+curl -X POST http://localhost:3000/api/v1/tasks \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Complete CRUD app",
+    "description": "Build a full CRUD application with Node.js",
+    "priority": "high"
+  }'
+Update Task (PATCH):
+
+bash
+
+Copy code
+curl -X PATCH http://localhost:3000/api/v1/tasks/YOUR_TASK_ID \
+  -H "Content-Type: application/json" \
+  -d '{
+    "status": "completed",
+    "priority": "medium"
+  }'
